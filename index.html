@@ -3,179 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TDAHNAV</title>
-  <style>
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background-color: #f4f6f9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    
-    header {
-      background-color: #1e293b;
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #38bdf8;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #38bdf8;
-    }
-
-
-    .hero {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #fff;
-      text-align: center;
-      padding: 5rem 1rem;
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      color: #94a3b8;
-    }
-
-    .btn {
-      background-color: #0284c7;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #0369a1;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .card {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-      text-align: center;
-    }
-
-    .card h3 {
-      margin-bottom: 0.5rem;
-      color: #0f172a;
-    }
-
-  
-    footer {
-      background-color: #0f172a;
-      color: #64748b;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 3rem;
-    }
-  </style>
+  <title>TDAHNav</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
-  <header>
-    <div class="logo">TDAHNAV</div>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#recursos">Recursos</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
+  <!-- Cabeçalho / Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">🧭</span>
+      <span class="logo-text">TDAHNav</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#" class="nav-btn">Ferramentas</a>
+      <a href="#" class="nav-btn nav-btn-outline">Emergência</a>
     </nav>
   </header>
 
-
-  <section id="inicio" class="hero">
-    <h1>Sites confusos?
-A gente resolve.</h1>
-    <p>Cole qualquer texto confuso, decomponha tarefas impossíveis ou use o guia de emergência quando travar.</p>
-    <a href="#recursos" class="btn">usar ferramentas.
-      <a href="#recursos" class="btn">travei agora.
-    </a>
-  </section>
-
-
+  <!-- Conteúdo Principal -->
   <main class="container">
-    <section id="recursos">
-      <h2 style="text-align: center; margin-bottom: 2rem;">Nossos Recursos</h2>
-      <div class="features">
-        <div class="card">
-          <h3>Design Moderno</h3>
-          <p>Layout limpo e adaptável para qualquer tipo de dispositivo ou tamanho de tela.</p>
-        </div>
-        <div class="card">
-          <h3>Código Limpo</h3>
-          <p>Estrutura organizada em HTML5 e CSS3 pronta para ser personalizada.</p>
-        </div>
-        <div class="card">
-          <h3>Rápido e Leve</h3>
-          <p>Sem dependências pesadas, carregando de forma instantânea no navegador.</p>
-        </div>
+    <span class="subtitle">FERRAMENTAS INTERATIVAS</span>
+    <h1 class="main-title">Escolha o que você precisa agora</h1>
+
+    <!-- Seleção de Abas/Ferramentas -->
+    <div class="tabs-container">
+      <button class="tab-card active">
+        <span class="tab-icon">🔍</span>
+        <span class="tab-label">Simplificador</span>
+      </button>
+
+      <button class="tab-card">
+        <span class="tab-icon">📁</span>
+        <span class="tab-label">Decompositor de Tarefas</span>
+      </button>
+
+      <button class="tab-card">
+        <span class="tab-icon">🤖</span>
+        <span class="tab-label">Prompts Prontos para IA</span>
+      </button>
+    </div>
+
+    <!-- Área da Ferramenta Ativa -->
+    <section class="tool-content">
+      <div class="tool-header">
+        <h2><span class="tool-icon">🔍</span> Simplificador</h2>
+        <p>Cole qualquer texto confuso — receba uma lista clara</p>
       </div>
+
+      <div class="input-group">
+        <textarea placeholder="Cole aqui qualquer texto confuso: instruções, formulário, e-mail complicado, FAQ obscuro..."></textarea>
+      </div>
+
+      <button class="action-btn">+ Simplificar agora</button>
     </section>
   </main>
 
-
-  <footer>
-    <p>&copy; 2026 MeuSite. Todos os direitos reservados.</p>
-  </footer>
-
-
-  <script>
-    console.log("Site carregado com sucesso!");
-  </script>
 </body>
 </html>

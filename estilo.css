@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #0a0d18;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Top Bar / Header */
+.navbar {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.logo-icon {
+  color: #fbbf24;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.nav-btn {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: color 0.2s;
+}
+
+.nav-btn:hover {
+  color: #ffffff;
+}
+
+.nav-btn-outline {
+  border: 1px solid #1e293b;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Container Central */
+.container {
+  width: 100%;
+  max-width: 850px;
+  padding: 2.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.main-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  color: #f8fafc;
+}
+
+/* Grade de Botões / Abas */
+.tabs-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.tab-card {
+  background-color: #121829;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.tab-card:hover:not(.active) {
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+.tab-card.active {
+  background-color: #fcd34d;
+  border-color: #fcd34d;
+  color: #0f172a;
+}
+
+.tab-icon {
+  font-size: 1.2rem;
+}
+
+/* Box da Ferramenta */
+.tool-content {
+  width: 100%;
+  background-color: #0f1523;
+  border: 1px solid #1e293d;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: left;
+}
+
+.tool-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  color: #ffffff;
+}
+
+.tool-header p {
+  color: #64748b;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Área de Texto */
+.input-group textarea {
+  width: 100%;
+  height: 150px;
+  background-color: #070a12;
+  border: 1px solid #1e293d;
+  border-radius: 10px;
+  padding: 1rem;
+  color: #f8fafc;
+  font-size: 0.9rem;
+  resize: vertical;
+  margin-bottom: 1.5rem;
+}
+
+.input-group textarea::placeholder {
+  color: #475569;
+}
+
+.input-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* Botão de Ação */
+.action-btn {
+  background-color: #182234;
+  color: #64748b;
+  border: 1px solid #233047;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background-color: #233047;
+  color: #ffffff;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+  .tabs-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .main-title {
+    font-size: 1.6rem;
+  }
+}
