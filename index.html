@@ -57,17 +57,40 @@
             <span class="tag" onclick="fillInput('preencher formulário')">preencher formulário</span>
         </div>
         
-        <!-- Botão com classe disabled e atributo disabled por padrão -->
+        
         <button id="decomporBtn" class="btn-action-teal disabled" disabled>✦ Decompor em passos</button>
     </div>
 </div>
 
-            <div id="prompts" class="tab-content">
-                <div class="tool-card">
-                    <h3>Prompts Prontos para IA</h3>
-                    <p>Em breve: Copie e cole comandos para facilitar sua vida.</p>
-                </div>
-            </div>
+          <div class="prompts-card">
+  <div class="prompts-header">
+    <h2 class="prompts-title">🤖 Prompts Prontos para IA</h2>
+    <p class="prompts-subtitle">Copie e cole no ChatGPT ou Claude para resolver qualquer situação</p>
+    <span class="prompts-instruction">Copie o prompt e cole no ChatGPT ou Claude</span>
+  </div>
+
+  <div class="prompts-list">
+    <div class="prompt-item">
+      <span class="prompt-text">📖 Simplificar texto</span>
+      <button class="btn-copiar" data-prompt="Reescreva o seguinte texto de forma simples, direta e acessível: [COLE O TEXTO AQUI]">Copiar</button>
+    </div>
+
+    <div class="prompt-item">
+      <span class="prompt-text">📋 Guia passo a passo</span>
+      <button class="btn-copiar" data-prompt="Crie um passo a passo claro e organizado para realizar a seguinte tarefa: [COLE A TAREFA AQUI]">Copiar</button>
+    </div>
+
+    <div class="prompt-item">
+      <span class="prompt-text">📝 Traduzir formulário</span>
+      <button class="btn-copiar" data-prompt="Explique de forma simples o que significa e o que preencher nestes campos de formulário: [COLE OS CAMPOS AQUI]">Copiar</button>
+    </div>
+
+    <div class="prompt-item">
+      <span class="prompt-text">✉️ Decodificar e-mail</span>
+      <button class="btn-copiar" data-prompt="Resuma este e-mail apontando a ação necessária, o prazo e a ideia principal: [COLE O E-MAIL AQUI]">Copiar</button>
+    </div>
+  </div>
+</div>
         </section>
 
         <section class="emergency-section">

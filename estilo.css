@@ -266,3 +266,74 @@ footer p {
 .btn-action-teal.disabled:hover {
     background-color: #222736;
 }
+.prompts-card {
+  background-color: #101221;
+  border: 1px solid #1e2238;
+  border-radius: 12px;
+  padding: 24px;
+  width: 100%;
+  max-width: 650px;
+  color: #ffffff;
+}
+
+.prompts-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.prompts-subtitle {
+  color: #8b949e;
+  font-size: 0.875rem;
+  margin-bottom: 12px;
+}
+
+.prompts-instruction {
+  display: block;
+  color: #6e7681;
+  font-size: 0.8rem;
+  margin-bottom: 16px;
+}
+
+.prompts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prompt-item {
+  background-color: #16192e;
+  border: 1px solid #232742;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prompt-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.btn-copiar {
+  background-color: #262b48;
+  color: #c9d1d9;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-copiar:hover {
+  background-color: #383e63;
+  color: #ffffff;
+}
+
+.btn-copiar.copiado {
+  background-color: #2ea043;
+  color: #ffffff;
+}

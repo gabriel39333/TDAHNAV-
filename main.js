@@ -10,22 +10,21 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).classList.add("active");
     evt.currentTarget.classList.add("active");
 }
-function checkInput() {
-    const input = document.getElementById('taskInput');
-    const btn = document.getElementById('decomporBtn');
-    if (input.value.trim() !== '') {
-        btn.disabled = false;
-        btn.classList.remove('disabled');
-    } else {
-        
-        btn.disabled = true;
-        btn.classList.add('disabled');
+document.querySelectorAll('.btn-copiar').forEach(button => {
+  button.addEventListener('click', () => {
+    const promptText = button.getAttribute('data-prompt');
+
+    if (promptText) {
+      navigator.clipboard.writeText(promptText).then(() => {
+        const originalText = button.textContent;
+        button.textContent = 'Copiado!';
+        button.classList.add('copiado');
+
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('copiado');
+        }, 2000);
+      });
     }
-}
-function fillInput(text) {
-    const input = document.getElementById('taskInput');
-    input.value = text;
-    checkInput(); 
-    
-    input.focus();
-}
+  });
+});
