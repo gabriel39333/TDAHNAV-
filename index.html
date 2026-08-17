@@ -42,11 +42,28 @@
                     <button class="btn-outline">+ Simplificar agora</button>
                 </div>
             </div>
-
-            <div id="decompositor" class="tab-content">
-                <div class="tool-card">
-                    <h3>Decompositor de Tarefas</h3>
-                    <p>Em breve: Divida grandes tarefas em passos menores.</p>
+<div class="tabs">
+    <button class="tab-btn" onclick="openTab(event, 'simplificador', 'active-amber')">🔍 Simplificador</button>
+    <button class="tab-btn active active-teal" onclick="openTab(event, 'decompositor', 'active-teal')">🗂️ Decompositor de Tarefas</button>
+    <button class="tab-btn" onclick="openTab(event, 'prompts', 'active-purple')">🤖 Prompts Prontos para IA</button>
+</div>
+<div id="decompositor" class="tab-content active">
+    <div class="tool-card">
+        <h3>🗂️ Decompositor de Tarefas</h3>
+        <p>Digite a tarefa — receba um checklist passo a passo</p>
+        
+        <input type="text" id="taskInput" class="decompositor-input" placeholder="O que você precisa fazer?" value="preencher formulário">
+        
+        <div class="suggestion-tags">
+            <span class="tag" onclick="fillInput('pagar conta')">pagar conta</span>
+            <span class="tag" onclick="fillInput('cancelar assinatura')">cancelar assinatura</span>
+            <span class="tag" onclick="fillInput('abrir chamado')">abrir chamado</span>
+            <span class="tag" onclick="fillInput('preencher formulário')">preencher formulário</span>
+        </div>
+        
+        <button class="btn-action-teal">✦ Decompor em passos</button>
+    </div>
+</div>
                 </div>
             </div>
 
