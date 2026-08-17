@@ -1,12 +1,16 @@
 :root {
     --bg-dark: #0f111a;
     --bg-card: #161b26;
-    --bg-card-hover: #1f2533;
-    --accent-amber: #f5b041;
+    --bg-input-dark: #0d1117;
+    --border-color: #2a3143;
     --text-main: #f8f9fa;
     --text-muted: #a0aabf;
-    --border-color: #2a3143;
+    
+    --accent-amber: #f5b041;
+    --accent-teal: #00e699;
+    --accent-purple: #7b61ff;
     --danger-red: #e74c3c;
+    
     --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -44,7 +48,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Hero Section */
 .hero {
     text-align: center;
     padding: 80px 20px;
@@ -52,27 +55,10 @@ body {
     margin: 0 auto;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
+.hero h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 20px; }
+.highlight { color: var(--accent-amber); }
+.hero p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px; }
 
-.highlight {
-    color: var(--accent-amber);
-}
-
-.hero p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
 
 button {
     cursor: pointer;
@@ -82,16 +68,15 @@ button {
     transition: all 0.3s ease;
 }
 
+.hero-buttons { display: flex; justify-content: center; gap: 15px; }
+
 .btn-primary {
     background-color: var(--accent-amber);
     color: #000;
     border: none;
     padding: 12px 24px;
 }
-
-.btn-primary:hover {
-    background-color: #e59a2f;
-}
+.btn-primary:hover { background-color: #e59a2f; }
 
 .btn-secondary {
     background-color: transparent;
@@ -99,12 +84,8 @@ button {
     border: 1px solid var(--danger-red);
     padding: 12px 24px;
 }
+.btn-secondary:hover { background-color: rgba(231, 76, 60, 0.1); }
 
-.btn-secondary:hover {
-    background-color: rgba(231, 76, 60, 0.1);
-}
-
-/* Tools Section */
 .tools-section {
     text-align: center;
     padding: 40px 20px;
@@ -126,20 +107,15 @@ button {
     padding: 10px 20px;
 }
 
-.tab-btn.active {
-    background-color: var(--bg-card);
-    color: var(--text-main);
-    border-color: var(--accent-amber);
-}
 
-.tab-content {
-    display: none;
-    text-align: left;
-}
+.tab-btn.active-amber { background-color: var(--accent-amber); color: #000; border-color: var(--accent-amber); }
+.tab-btn.active-teal { background-color: var(--accent-teal); color: #000; border-color: var(--accent-teal); font-weight: bold; }
+.tab-btn.active-purple { background-color: var(--accent-purple); color: #fff; border-color: var(--accent-purple); font-weight: bold; }
 
-.tab-content.active {
-    display: block;
-}
+
+.tab-content { display: none; text-align: left; }
+.tab-content.active { display: block; }
+
 
 .tool-card {
     background-color: var(--bg-card);
@@ -148,16 +124,8 @@ button {
     padding: 30px;
 }
 
-.tool-card h3 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
+.tool-card h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
 
-.tool-card h3::before {
-    content: "⚙️";
-}
 
 .tool-card textarea {
     width: 100%;
@@ -178,35 +146,66 @@ button {
     border: 1px solid var(--border-color);
     padding: 10px 20px;
 }
+.btn-outline:hover { border-color: var(--text-muted); }
 
-.btn-outline:hover {
-    border-color: var(--text-muted);
+
+.decompositor-input {
+    width: 100%;
+    background-color: var(--bg-input-dark);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 16px;
+    border-radius: 6px;
+    margin: 20px 0 15px 0;
+    font-family: inherit;
+    font-size: 1rem;
+}
+.decompositor-input:focus { outline: none; border-color: var(--accent-teal); }
+
+.suggestion-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
-/* Emergency Section */
-.emergency-section {
-    padding: 60px 20px;
-    max-width: 700px;
-    margin: 0 auto;
+.tag {
+    background-color: transparent;
+    color: var(--accent-teal);
+    border: 1px solid rgba(0, 230, 153, 0.3);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.tag:hover { background-color: rgba(0, 230, 153, 0.1); border-color: var(--accent-teal); }
+
+.btn-action-teal {
+    background-color: var(--accent-teal);
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-action-teal:hover:not(:disabled) { background-color: #00cc88; }
+
+
+.btn-action-teal:disabled, .btn-action-teal.disabled {
+    background-color: #222736;
+    color: #5c677d;
+    cursor: not-allowed;
+    border: none;
 }
 
-.emergency-card {
-    border: 1px solid #4a2525;
-    background-color: #1a1014;
-    border-radius: 10px;
-    padding: 40px;
-}
 
-.emergency-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.siren {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 10px;
-}
+.emergency-section { padding: 60px 20px; max-width: 700px; margin: 0 auto; }
+.emergency-card { border: 1px solid #4a2525; background-color: #1a1014; border-radius: 10px; padding: 40px; }
+.emergency-header { text-align: center; margin-bottom: 40px; }
+.siren { font-size: 2rem; display: block; margin-bottom: 10px; }
 
 .step-item {
     background-color: var(--bg-card);
@@ -218,7 +217,6 @@ button {
     gap: 20px;
     align-items: flex-start;
 }
-
 .step-indicator {
     background-color: var(--bg-dark);
     color: var(--text-muted);
@@ -231,109 +229,9 @@ button {
     font-weight: bold;
     flex-shrink: 0;
 }
+.step-text strong { display: block; margin-bottom: 5px; }
+.step-text p { color: var(--text-muted); font-size: 0.9rem; }
 
-.step-text strong {
-    display: block;
-    margin-bottom: 5px;
-}
 
-.step-text p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 60px 20px;
-    border-top: 1px solid var(--border-color);
-    margin-top: 40px;
-}
-
-footer p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    margin-top: 20px;
-}
-.btn-action-teal:disabled,
-.btn-action-teal.disabled {
-    background-color: #222736; 
-    color: #5c677d; 
-    cursor: not-allowed;
-    border: none;
-}
-.btn-action-teal:disabled:hover,
-.btn-action-teal.disabled:hover {
-    background-color: #222736;
-}
-.prompts-card {
-  background-color: #101221;
-  border: 1px solid #1e2238;
-  border-radius: 12px;
-  padding: 24px;
-  width: 100%;
-  max-width: 650px;
-  color: #ffffff;
-}
-
-.prompts-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.prompts-subtitle {
-  color: #8b949e;
-  font-size: 0.875rem;
-  margin-bottom: 12px;
-}
-
-.prompts-instruction {
-  display: block;
-  color: #6e7681;
-  font-size: 0.8rem;
-  margin-bottom: 16px;
-}
-
-.prompts-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.prompt-item {
-  background-color: #16192e;
-  border: 1px solid #232742;
-  border-radius: 8px;
-  padding: 12px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.prompt-text {
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.btn-copiar {
-  background-color: #262b48;
-  color: #c9d1d9;
-  border: none;
-  padding: 6px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: background 0.2s, color 0.2s;
-}
-
-.btn-copiar:hover {
-  background-color: #383e63;
-  color: #ffffff;
-}
-
-.btn-copiar.copiado {
-  background-color: #2ea043;
-  color: #ffffff;
-}
+footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--border-color); margin-top: 40px; }
+footer p { color: var(--text-muted); font-size: 0.9rem; margin-top: 20px; }

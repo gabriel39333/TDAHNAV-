@@ -24,74 +24,75 @@
             </div>
         </section>
 
-        <section class="tools-section">
-            <p class="subtitle">FERRAMENTAS INTERATIVAS</p>
-            <h2>Escolha o que você precisa agora</h2>
-            
-            <div class="tabs">
-                <button class="tab-btn active" onclick="openTab(event, 'simplificador')">Simplificador</button>
-                <button class="tab-btn" onclick="openTab(event, 'decompositor')">Decompositor de Tarefas</button>
-                <button class="tab-btn" onclick="openTab(event, 'prompts')">Prompts Prontos para IA</button>
-            </div>
+      <section class="tools-section">
+    <p class="subtitle">FERRAMENTAS INTERATIVAS</p>
+    <h2>Escolha o que você precisa agora</h2>
+    
+    
+    <div class="tabs">
+        <button class="tab-btn active active-amber" onclick="openTab(event, 'simplificador', 'active-amber')">🔍 Simplificador</button>
+        <button class="tab-btn" onclick="openTab(event, 'decompositor', 'active-teal')">🗂️ Decompositor de Tarefas</button>
+        <button class="tab-btn" onclick="openTab(event, 'prompts', 'active-purple')">🤖 Prompts Prontos para IA</button>
+    </div>
 
-            <div id="simplificador" class="tab-content active">
-                <div class="tool-card">
-                    <h3>Simplificador</h3>
-                    <p>Cole qualquer texto confuso - receba uma lista clara.</p>
-                    <textarea placeholder="Cole aqui qualquer texto confuso: instruções, formulário, e-mail complicado, FAQ obscuro..."></textarea>
-                    <button class="btn-outline">+ Simplificar agora</button>
+    
+    <div id="simplificador" class="tab-content active">
+        <div class="tool-card">
+            <h3>⚙️ Simplificador</h3>
+            <p>Cole qualquer texto confuso - receba uma lista clara.</p>
+            <textarea placeholder="Cole aqui qualquer texto confuso: instruções, formulário, e-mail complicado, FAQ obscuro..."></textarea>
+            <button class="btn-outline">+ Simplificar agora</button>
+        </div>
+    </div>
+
+    
+    <div id="decompositor" class="tab-content">
+        <div class="tool-card">
+            <h3>🗂️ Decompositor de Tarefas</h3>
+            <p>Digite a tarefa — receba um checklist passo a passo</p>
+            
+            <input type="text" id="taskInput" class="decompositor-input" placeholder="Ex: pagar conta, cancelar assinatura, abrir chamado..." oninput="checkInput()">
+            
+            <div class="suggestion-tags">
+                <span class="tag" onclick="fillInput('pagar conta')">pagar conta</span>
+                <span class="tag" onclick="fillInput('cancelar assinatura')">cancelar assinatura</span>
+                <span class="tag" onclick="fillInput('abrir chamado')">abrir chamado</span>
+                <span class="tag" onclick="fillInput('preencher formulário')">preencher formulário</span>
+            </div>
+            
+            <button id="decomporBtn" class="btn-action-teal disabled" disabled>✦ Decompor em passos</button>
+        </div>
+    </div>
+
+ 
+    <div id="prompts" class="tab-content">
+        <div class="tool-card" style="border-color: #7b61ff;"> 
+            <h3>🤖 Prompts Prontos para IA</h3>
+            <p>Copie e cole no ChatGPT ou Claude para resolver qualquer situação</p>
+            <p style="color: var(--text-muted); font-size: 0.8rem; text-align: center; margin-bottom: 20px;">Copie o prompt e cole no ChatGPT ou Claude</p>
+            
+        
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background-color: var(--bg-dark); border-radius: 6px; border: 1px solid var(--border-color);">
+                    <span>📖 Simplificar texto</span>
+                    <button style="background-color: #2b2d3d; color: #a0aabf; border: none; padding: 5px 15px; border-radius: 4px;">Copiado!</button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background-color: var(--bg-dark); border-radius: 6px; border: 1px solid var(--border-color);">
+                    <span>📋 Guia passo a passo</span>
+                    <button style="background-color: transparent; color: var(--text-main); border: 1px solid var(--border-color); padding: 5px 15px; border-radius: 4px;">Copiar</button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background-color: var(--bg-dark); border-radius: 6px; border: 1px solid var(--border-color);">
+                    <span>📝 Traduzir formulário</span>
+                    <button style="background-color: transparent; color: var(--text-main); border: 1px solid var(--border-color); padding: 5px 15px; border-radius: 4px;">Copiar</button>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background-color: var(--bg-dark); border-radius: 6px; border: 1px solid var(--border-color);">
+                    <span>✉️ Decodificar e-mail</span>
+                    <button style="background-color: #2b2d3d; color: #a0aabf; border: none; padding: 5px 15px; border-radius: 4px;">Copiado!</button>
                 </div>
             </div>
-<div id="decompositor" class="tab-content active">
-    <div class="tool-card">
-        <h3>🗂️ Decompositor de Tarefas</h3>
-        <p>Digite a tarefa — receba um checklist passo a passo</p>
-        
-        <!-- Placeholder atualizado, sem 'value' e com oninput para verificar a digitação -->
-        <input type="text" id="taskInput" class="decompositor-input" placeholder="Ex: pagar conta, cancelar assinatura, abrir chamado..." oninput="checkInput()">
-        
-        <div class="suggestion-tags">
-            <span class="tag" onclick="fillInput('pagar conta')">pagar conta</span>
-            <span class="tag" onclick="fillInput('cancelar assinatura')">cancelar assinatura</span>
-            <span class="tag" onclick="fillInput('abrir chamado')">abrir chamado</span>
-            <span class="tag" onclick="fillInput('preencher formulário')">preencher formulário</span>
         </div>
-        
-        
-        <button id="decomporBtn" class="btn-action-teal disabled" disabled>✦ Decompor em passos</button>
     </div>
-</div>
-
-          <div class="prompts-card">
-  <div class="prompts-header">
-    <h2 class="prompts-title">🤖 Prompts Prontos para IA</h2>
-    <p class="prompts-subtitle">Copie e cole no ChatGPT ou Claude para resolver qualquer situação</p>
-    <span class="prompts-instruction">Copie o prompt e cole no ChatGPT ou Claude</span>
-  </div>
-
-  <div class="prompts-list">
-    <div class="prompt-item">
-      <span class="prompt-text">📖 Simplificar texto</span>
-      <button class="btn-copiar" data-prompt="Reescreva o seguinte texto de forma simples, direta e acessível: [COLE O TEXTO AQUI]">Copiar</button>
-    </div>
-
-    <div class="prompt-item">
-      <span class="prompt-text">📋 Guia passo a passo</span>
-      <button class="btn-copiar" data-prompt="Crie um passo a passo claro e organizado para realizar a seguinte tarefa: [COLE A TAREFA AQUI]">Copiar</button>
-    </div>
-
-    <div class="prompt-item">
-      <span class="prompt-text">📝 Traduzir formulário</span>
-      <button class="btn-copiar" data-prompt="Explique de forma simples o que significa e o que preencher nestes campos de formulário: [COLE OS CAMPOS AQUI]">Copiar</button>
-    </div>
-
-    <div class="prompt-item">
-      <span class="prompt-text">✉️ Decodificar e-mail</span>
-      <button class="btn-copiar" data-prompt="Resuma este e-mail apontando a ação necessária, o prazo e a ideia principal: [COLE O E-MAIL AQUI]">Copiar</button>
-    </div>
-  </div>
-</div>
-        </section>
+</section>
 
         <section class="emergency-section">
             <div class="emergency-card">
