@@ -255,3 +255,14 @@ footer p {
     font-size: 0.9rem;
     margin-top: 20px;
 }
+.btn-action-teal:disabled,
+.btn-action-teal.disabled {
+    background-color: #222736; 
+    color: #5c677d; 
+    cursor: not-allowed;
+    border: none;
+}
+.btn-action-teal:disabled:hover,
+.btn-action-teal.disabled:hover {
+    background-color: #222736;
+}
