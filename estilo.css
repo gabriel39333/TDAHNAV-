@@ -14,6 +14,10 @@
     --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -26,6 +30,7 @@ body {
     font-family: var(--font-family);
     line-height: 1.6;
 }
+
 
 .navbar {
     padding: 20px 5%;
@@ -59,7 +64,6 @@ body {
 .highlight { color: var(--accent-amber); }
 .hero p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px; }
 
-
 button {
     cursor: pointer;
     font-family: var(--font-family);
@@ -86,6 +90,7 @@ button {
 }
 .btn-secondary:hover { background-color: rgba(231, 76, 60, 0.1); }
 
+
 .tools-section {
     text-align: center;
     padding: 40px 20px;
@@ -107,11 +112,9 @@ button {
     padding: 10px 20px;
 }
 
-
 .tab-btn.active-amber { background-color: var(--accent-amber); color: #000; border-color: var(--accent-amber); }
 .tab-btn.active-teal { background-color: var(--accent-teal); color: #000; border-color: var(--accent-teal); font-weight: bold; }
 .tab-btn.active-purple { background-color: var(--accent-purple); color: #fff; border-color: var(--accent-purple); font-weight: bold; }
-
 
 .tab-content { display: none; text-align: left; }
 .tab-content.active { display: block; }
@@ -122,6 +125,10 @@ button {
     border: 1px solid var(--border-color);
     border-radius: 10px;
     padding: 30px;
+}
+
+.border-purple {
+    border-color: rgba(123, 97, 255, 0.4);
 }
 
 .tool-card h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
@@ -193,12 +200,94 @@ button {
 }
 .btn-action-teal:hover:not(:disabled) { background-color: #00cc88; }
 
-
 .btn-action-teal:disabled, .btn-action-teal.disabled {
     background-color: #222736;
     color: #5c677d;
     cursor: not-allowed;
     border: none;
+}
+
+.result-box, .checklist-box {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: var(--bg-dark);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.hidden { display: none; }
+
+.result-box ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.result-box li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background-color: var(--bg-card);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.check-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent-teal);
+    cursor: pointer;
+}
+
+.check-item.completed span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+.small-muted {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.prompt-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.prompt-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--bg-dark);
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.btn-copy {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 6px 16px;
+    border-radius: 4px;
+}
+
+.btn-copy.copied {
+    background-color: #2b2d3d;
+    color: var(--text-muted);
+    border-color: transparent;
 }
 
 
